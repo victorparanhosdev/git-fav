@@ -1,0 +1,175 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+}
+
+button {
+  font-family: 'Roboto', sans-serif;
+}
+a {
+  text-decoration: none;
+}
+body {
+  font-size: 1.6rem;
+  background: black;
+  color: #FFFFFF;
+  font-family: 'Roboto', sans-serif;
+ 
+}
+
+#app {
+  margin: 11.5rem auto auto auto;
+  max-width: 112rem;
+  width: 95%;
+  
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8.7rem;
+}
+
+.wrapper-search {
+  display: flex;
+  gap: 0.8rem;
+  height: 4.8rem;
+
+}
+.wrapper-search label {
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  position: absolute;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+#box-search {
+  background-color: #06181C;
+  color: #7C7C8A;
+  font-weight: normal;
+  font-size: 1.6rem;
+  padding: 1.6rem;
+  border: none;
+
+  border-radius: 0.5rem;
+  width: 46.2rem;
+  font-family: 'Roboto', sans-serif;
+ 
+}
+
+
+#btn-fav {
+ 
+  color: white;
+  gap: 0.8rem;
+  padding: 1.2rem 3.2rem;
+  display: flex;
+  align-items: center;
+  background: #065E7C;
+  border: none;
+  border-radius: 0.5rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: background 0.4s;
+}
+#btn-fav:hover {
+  transition: background 0.4s linear;
+  background: #FFFFFF;
+  color: #065E7C;
+
+}
+#btn-fav:hover svg path {
+  fill: #065E7C;
+}
+
+
+.img-user {
+  width: 5.6rem;
+  height: 5.6rem;
+  border-radius: 50%;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;  
+
+
+
+}
+table thead tr {
+  background-color: #092D38;
+}
+table thead tr th {
+  font-weight: bold;
+  font-size: 2rem;
+  padding: 1.6rem 4rem;
+  text-align: left;
+}
+
+table tbody tr td {
+  padding: 2.8rem 4rem;
+}
+
+
+table tbody tr td:first-child{
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+table tbody tr td:first-child > div a{
+  font-size: 2rem;
+  font-weight: bold;
+  color: #E1E1E6;
+}
+table tbody tr td:first-child > div p{
+  font-size: 2rem;
+  font-weight: normal;
+  color: #E1E1E6;
+}
+
+table tbody tr:nth-child(odd) {
+  background-color: #06161b50;
+  
+}
+table tbody tr:nth-child(even) {
+  background-color: #4A808C20;
+}
+
+table thead tr th:first-child{
+  border-top-left-radius: 1.2rem;
+}
+table thead tr th:last-child{
+  border-top-right-radius: 1.2rem;
+}
+
+table tbody tr:last-child td:first-child{
+  border-bottom-left-radius: 1.2rem;
+}
+table tbody tr:last-child td:last-child{
+  border-bottom-right-radius: 1.2rem;
+}
+
+.btn-remover {
+  font-weight: bold;
+  font-size: 2rem;
+  color: #F75A68;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.btn-remover:hover {
+  transition: color 0.3s;
+  color:rgba(255, 0, 0, 0.734)
+}
