@@ -59,7 +59,6 @@ header {
   font-size: 1.6rem;
   padding: 1.6rem;
   border: none;
-
   border-radius: 0.5rem;
   width: 46.2rem;
   font-family: 'Roboto', sans-serif;
@@ -104,21 +103,24 @@ table {
   border-collapse: collapse;
   width: 100%;  
 
-
-
 }
+
+
 table thead tr {
   background-color: #092D38;
+  
 }
 table thead tr th {
   font-weight: bold;
   font-size: 2rem;
   padding: 1.6rem 4rem;
   text-align: left;
+  
 }
 
 table tbody tr td {
   padding: 2.8rem 4rem;
+  
 }
 
 
@@ -172,4 +174,27 @@ table tbody tr:last-child td:last-child{
 .btn-remover:hover {
   transition: color 0.3s;
   color:rgba(255, 0, 0, 0.734)
+}
+
+main {
+  border-radius: 1.2rem;
+  height: 37.6rem;
+  overflow: auto;
+  border: 0.1rem solid #4A808C;
+}
+
+::-webkit-scrollbar {
+  width: 0.6rem;
+  height: 0.6rem;
+
+}
+
+::-webkit-scrollbar-corner{
+  background-color: none
+}
+
+::-webkit-scrollbar-thumb {
+  background: #4A808C;
+ border-radius: 1.2rem;
+
 }
