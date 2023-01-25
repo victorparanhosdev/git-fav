@@ -8,7 +8,9 @@
   font-size: 62.5%;
 }
 
-button, input, body {
+button,
+input,
+body {
   font-family: 'Roboto', sans-serif;
 }
 
@@ -19,14 +21,12 @@ a {
 body {
   font-size: 1.6rem;
   background: black;
-  color: #FFFFFF;
-
+  color: #ffffff;
 }
 
 #app {
   margin: 11.5rem auto 1rem;
   width: min(98%, 112rem);
-  
 }
 
 header {
@@ -50,12 +50,12 @@ header {
   position: absolute;
   overflow: hidden;
   white-space: nowrap;
-  clip: rect(0,0,0,0);
+  clip: rect(0, 0, 0, 0);
 }
 
 #box-search {
-  background-color: #06181C;
-  color: #7C7C8A;
+  background-color: #06181c;
+  color: #7c7c8a;
   font-weight: normal;
   font-size: 1.6rem;
   padding: 1.6rem;
@@ -64,14 +64,13 @@ header {
   width: 46.2rem;
 }
 
-
 #btn-fav {
   color: white;
   gap: 0.8rem;
   padding: 1.2rem 3.2rem;
   display: flex;
   align-items: center;
-  background: #065E7C;
+  background: #065e7c;
   border: none;
   border-radius: 0.5rem;
   text-transform: uppercase;
@@ -83,14 +82,12 @@ header {
 
 #btn-fav:hover {
   transition: background 0.4s linear;
-  background: #FFFFFF;
-  color: #065E7C;
-
+  background: #ffffff;
+  color: #065e7c;
 }
 #btn-fav:hover svg path {
-  fill: #065E7C;
+  fill: #065e7c;
 }
-
 
 .img-user {
   width: 5.6rem;
@@ -98,24 +95,22 @@ header {
   border-radius: 50%;
 }
 
-th:first-child, td:first-child {
+th:first-child,
+td:first-child {
   width: 52rem;
   text-align: left;
 }
 
-
 table {
-  border-collapse: collapse;  
+  border-collapse: collapse;
   table-layout: fixed;
   width: 100%;
-
 }
 
-thead, tbody {
-display: block;
-
+thead,
+tbody {
+  display: block;
 }
-
 
 #tbody {
   border-radius: 0 0 1.2rem 1.2rem;
@@ -126,19 +121,14 @@ display: block;
   border-top: 0;
 }
 
-
 .fav-head {
   border: 1px solid #4a808c;
   border-radius: 1.2rem 1.2rem 0 0;
   border-bottom: 0;
-
- 
- 
 }
 
-
 table thead tr {
-  background-color: #092D38; 
+  background-color: #092d38;
 }
 
 table thead tr th {
@@ -147,31 +137,28 @@ table thead tr th {
   padding: 1.6rem 4rem;
   text-align: left;
   width: 20rem;
-  
 }
 
 table tbody tr td {
   padding: 2.8rem 4rem;
   width: 20rem;
-  
 }
 
-
-table tbody tr td:first-child{
+table tbody tr td:first-child {
   display: flex;
   align-items: center;
   gap: 1.6rem;
 }
 
-table tbody tr td:first-child > div a{
+table tbody tr td:first-child > div a {
   font-size: 2rem;
   font-weight: bold;
-  color: #E1E1E6;
+  color: #e1e1e6;
 }
-table tbody tr td:first-child > div p{
+table tbody tr td:first-child > div p {
   font-size: 2rem;
   font-weight: normal;
-  color: #E1E1E6;
+  color: #e1e1e6;
 }
 
 table tbody tr:nth-child(odd) {
@@ -180,31 +167,30 @@ table tbody tr:nth-child(odd) {
   border-right: 0;
   background-color: rgba(6, 22, 27, 50%);
   transition: filter 0.1s;
-  
 }
 table tbody tr:nth-child(even) {
   border: 1px solid #4a808c;
   border-left: 0;
   border-right: 0;
-  background-color: #06181C;
+  background-color: #06181c;
   transition: filter 0.1s;
 }
 
 table tbody tr:hover {
-  filter: brightness(1.2)
+  filter: brightness(1.2);
 }
 
-table thead tr th:first-child{
+table thead tr th:first-child {
   border-top-left-radius: 1.2rem;
 }
-table thead tr th:last-child{
+table thead tr th:last-child {
   border-top-right-radius: 1.2rem;
 }
 
-table tbody tr:last-child td:first-child{
+table tbody tr:last-child td:first-child {
   border-bottom-left-radius: 1.2rem;
 }
-table tbody tr:last-child td:last-child{
+table tbody tr:last-child td:last-child {
   border-bottom-right-radius: 1.2rem;
 }
 table tbody tr:last-child {
@@ -217,7 +203,7 @@ table tbody tr:first-child {
 .btn-remover {
   font-weight: bold;
   font-size: 2rem;
-  color: #F75A68;
+  color: #f75a68;
   background: none;
   border: none;
   cursor: pointer;
@@ -225,19 +211,17 @@ table tbody tr:first-child {
 
 .btn-remover:hover {
   transition: color 0.3s;
-  color:red;
+  color: red;
 }
 
-
 ::-webkit-scrollbar {
-  width: 0.6rem; 
-  height: 0.6rem; 
+  width: 0.6rem;
+  height: 0.6rem;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #4A808C;
+  background: #4a808c;
   border-radius: 1rem;
-  
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #5c929e;
@@ -247,5 +231,4 @@ table tbody tr:first-child {
   background-color: #223c4283;
   border-radius: 1rem;
   margin-block: 1rem;
- 
 }
