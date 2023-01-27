@@ -99,6 +99,10 @@ header {
 #btn-fav:hover svg path {
   fill: #065e7c;
 }
+#btn-fav svg {
+  width: 2.25rem;
+  height: 2.1rem;
+}
 
 .img-user {
   width: 5.6rem;
@@ -106,7 +110,7 @@ header {
   border-radius: 50%;
 }
 
-th:first-child,
+th:first-child, 
 td:first-child {
   width: 52rem;
   text-align: left;
@@ -165,6 +169,7 @@ table tbody tr td:first-child > div a {
   font-size: 2rem;
   font-weight: bold;
   color: #e1e1e6;
+
 }
 table tbody tr td:first-child > div p {
   font-size: 2rem;
@@ -248,6 +253,9 @@ table tbody tr:first-child {
   overflow: hidden;
  
 }
+table tbody:has(tr.empty) tr:hover{
+  filter: none;
+}
 
 #tbody:has(tr.empty) tr{
   background: #030B0D;
@@ -278,4 +286,83 @@ table tbody tr:first-child {
 .img-empty {
   width: 13.2rem;
   height: 12.5rem;
+}
+
+
+@media (min-width: 320px) and (max-width: 768px){
+:root {
+    font-size: 27%;
+  }
+  header {
+    display: block;
+  }
+  header img {
+    display: block;
+    width: 40rem;
+    margin: auto;
+  }
+  .wrapper-search {
+    justify-content: center;
+    margin: 5rem auto;
+    height: 5.5rem;
+  }
+  
+  #box-search{
+    width: 100vw;
+    font-size: 2rem;
+  }
+  #btn-fav{
+    font-size: 1.7rem;
+  }
+  #tbody .empty td div p{
+    font-size: 3.5rem;
+  }
+  thead{
+    display: table-header-group;
+  }
+  tbody {
+    display: table-row-group;
+  }
+  main{
+    max-height: 50vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+  th:first-child, td:first-child{
+    width: fit-content;
+  }
+  .fav-head, #tbody{
+    border: 0;
+  }
+  table thead tr th{
+    width: auto;
+  }
+  #tbody:has(tr.empty) tr {
+    width: 100vw;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 375px){
+  :root {
+    font-size: 33%;
+  }
+}
+
+@media (min-width: 375px) and (max-width: 425px){
+  :root {
+    font-size: 37%;
+  }
+}
+
+
+@media (min-width: 425px) and (max-width: 500px){
+  :root {
+    font-size: 40%;
+  }
+}
+
+@media (min-width: 500px) and (max-width: 768px){
+  :root {
+    font-size: 58%;
+  }
 }
