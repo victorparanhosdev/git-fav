@@ -8,6 +8,8 @@
   font-size: 62.5%;
 }
 
+
+
 button,
 input,
 body {
@@ -115,7 +117,7 @@ tbody {
 #tbody {
   border-radius: 0 0 1.2rem 1.2rem;
   border: 1px solid #4a808c;
-  max-height: 62.8rem;
+  max-height: 52.8rem;
   overflow-y: auto;
   overflow-x: hidden;
   border-top: 0;
@@ -165,7 +167,7 @@ table tbody tr:nth-child(odd) {
   border: 1px solid #4a808c;
   border-left: 0;
   border-right: 0;
-  background-color: rgba(6, 22, 27, 50%);
+  background-color: #06161b80;
   transition: filter 0.1s;
 }
 table tbody tr:nth-child(even) {
@@ -231,4 +233,35 @@ table tbody tr:first-child {
   background-color: #223c4283;
   border-radius: 1rem;
   margin-block: 1rem;
+}
+
+#tbody tr.empty {
+  display: block;  
+  background: #030B0D;
+  overflow: hidden;
+}
+
+#tbody tr.empty td {
+  height: 40rem;
+  width: 100%;
+  display: grid;
+  place-content: center;
+}
+
+#tbody tr.empty td div{
+  display: flex;
+  gap: 5rem;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+#tbody tr.empty td div p {
+  font-family: 'Roboto Mono', monospace;
+  color: #4E5455;
+  font-size: 4rem;
+}
+.img-empty {
+  width: 13.2rem;
+  height: 12.5rem;
 }

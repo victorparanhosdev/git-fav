@@ -1,8 +1,12 @@
+
+
+
 class Favorites {
   constructor(root) {
     this.app = document.querySelector(root)
     this.body = document.querySelector('main table #tbody')
-
+    this.dadosRow()
+    this.updateRow()
 
   }
 }
@@ -10,10 +14,6 @@ class Favorites {
 class Gitfav extends Favorites {
   constructor(root) {
     super(root)
-    this.dadosRow()
-    this.updateRow()
-
-
   }
 
   dadosRow(){
@@ -41,11 +41,32 @@ class Gitfav extends Favorites {
   
 
   }
+  createRowEmpty(){
+    const trEmpty = document.createElement('tr')
+    trEmpty.innerHTML = `
+    <td>
+      <div>
+        <img class="img-empty" src="./assets/Estrela.svg" alt="">
+      <p>Nenhum favorito ainda</p>
+    </div>
+    </td>`
 
+    trEmpty.classList.add('empty')
+    return trEmpty
 
+  }
   updateRow(){
 
     this.removeAll()
+
+
+    const Confere = this.dados.length == 0
+
+    if(Confere){
+      const tr = this.createRowEmpty()
+      this.body.append(tr)
+      return
+    }
 
     this.dados.forEach(user => {
       const row = this.createRow()
@@ -72,11 +93,9 @@ class Gitfav extends Favorites {
 
     
   }
-
   removeAll(){
     this.body.querySelectorAll('tr').forEach(tr => tr.remove())
   }
-
   delete(value){
     
     const filter = this.dados.filter(user => {
@@ -89,9 +108,6 @@ class Gitfav extends Favorites {
     
 
   }
-
-
-
   createRow() {
 
     const tr = document.createElement('tr')
@@ -113,9 +129,6 @@ class Gitfav extends Favorites {
     return tr
 
   }
-
-
-
 }
 
 
