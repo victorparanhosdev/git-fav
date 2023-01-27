@@ -1,13 +1,23 @@
-
-
-
+class GithubUser {
+  static async search(nome) {
+    const endpoint = `https://api.github.com/users/${nome}`
+    return fetch(endpoint)
+      .then(response => response.json())
+      .then(({ name, login, public_repos, followers }) => ({
+        nome: name,
+        user: login,
+        repositorios: public_repos,
+        seguidores: followers
+      }))
+  }
+}
 class Favorites {
   constructor(root) {
     this.app = document.querySelector(root)
     this.body = document.querySelector('main table #tbody')
     this.dadosRow()
     this.updateRow()
-
+    this.onAdd()
   }
 }
 
@@ -16,53 +26,62 @@ class Gitfav extends Favorites {
     super(root)
   }
 
-  dadosRow(){
-
-    this.dados = [{
-      nome: 'Victor',
-      user: 'victorparanhosdev',
-      repositorios: 4252,
-      seguidores: 55577
-    },
-    {
-      nome: 'Jose',
-      user: 'jose',
-      repositorios: 42342,
-      seguidores: 55337
-    },
-    {
-      nome: 'biubiu',
-      user: 'dvdnotfound',
-      repositorios: 42342,
-      seguidores: 55337
-    },
-  ]
-
-  
-
+  dadosRow() {
+    this.dados = JSON.parse(localStorage.getItem('@git:')) || []
   }
-  createRowEmpty(){
+  save() {
+    localStorage.setItem('@git:', JSON.stringify(this.dados))
+  }
+
+  async username(nome) {
+    const user = await GithubUser.search(nome)
+    this.dados = [user, ...this.dados]
+    this.updateRow()
+    this.save()
+  }
+
+  onAdd() {
+    const btnFav = document.querySelector('#btn-fav')
+
+    btnFav.onclick = () => {
+      const { value } = document.querySelector('#box-search')
+      this.username(value)
+      document.querySelector('#box-search').value = ''
+    }
+
+    window.addEventListener('keydown', event => {
+      if (event.key == 'Enter') {
+        const { value } = document.querySelector('#box-search')
+        if (value == '') {
+          alert('Por favor Preencha os dados')
+        } else {
+          this.username(value)
+          document.querySelector('#box-search').value = ''
+        }
+      }
+    })
+  }
+
+  createRowEmpty() {
     const trEmpty = document.createElement('tr')
     trEmpty.innerHTML = `
-    <td>
-      <div>
-        <img class="img-empty" src="./assets/Estrela.svg" alt="">
-      <p>Nenhum favorito ainda</p>
-    </div>
-    </td>`
+              <td>
+              <div>
+                <img class="img-empty" src="./assets/Estrela.svg" alt="">
+              <p>Nenhum favorito ainda</p>
+            </div>
+            </td>
+`
 
     trEmpty.classList.add('empty')
     return trEmpty
-
   }
-  updateRow(){
-
+  updateRow() {
     this.removeAll()
-
 
     const Confere = this.dados.length == 0
 
-    if(Confere){
+    if (Confere) {
       const tr = this.createRowEmpty()
       this.body.append(tr)
       return
@@ -79,37 +98,27 @@ class Gitfav extends Favorites {
       row.querySelector('.seguidores').textContent = `${user.seguidores}`
       row.querySelector('.btn-remover').addEventListener('click', () => {
         const isOk = confirm('Tem certeza que deseja excluir ?')
-        if(isOk){
+        if (isOk) {
           this.delete(user)
         }
-      
-      
-      })  
+      })
 
       this.body.append(row)
-    
-    
     })
-
-    
   }
-  removeAll(){
+  removeAll() {
     this.body.querySelectorAll('tr').forEach(tr => tr.remove())
   }
-  delete(value){
-    
+  delete(value) {
     const filter = this.dados.filter(user => {
       return user.user !== value.user
     })
     this.dados = filter
- 
-    this.updateRow()
-   
-    
 
+    this.updateRow()
+    this.save()
   }
   createRow() {
-
     const tr = document.createElement('tr')
 
     tr.innerHTML = `
@@ -127,11 +136,7 @@ class Gitfav extends Favorites {
   </td>`
 
     return tr
-
   }
 }
-
-
-
 
 new Gitfav('#app')

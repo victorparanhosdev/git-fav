@@ -57,7 +57,7 @@ header {
 
 #box-search {
   background-color: #06181c;
-  color: #7c7c8a;
+  color: white;
   font-weight: normal;
   font-size: 1.6rem;
   padding: 1.6rem;
@@ -65,7 +65,16 @@ header {
   border-radius: 0.5rem;
   width: 46.2rem;
 }
+#box-search::placeholder{
+  color: #7c7c8a;
+}
+#box-search:focus{
+ outline: 2px solid #092d38;
+}
 
+#btn-fav:focus{
+  outline: 2px solid #4a808c;
+}
 #btn-fav {
   color: white;
   gap: 0.8rem;
@@ -117,7 +126,7 @@ tbody {
 #tbody {
   border-radius: 0 0 1.2rem 1.2rem;
   border: 1px solid #4a808c;
-  max-height: 52.8rem;
+  max-height: 56.8rem;
   overflow-y: auto;
   overflow-x: hidden;
   border-top: 0;
@@ -167,7 +176,7 @@ table tbody tr:nth-child(odd) {
   border: 1px solid #4a808c;
   border-left: 0;
   border-right: 0;
-  background-color: #06161b80;
+  background-color: #030B0D;
   transition: filter 0.1s;
 }
 table tbody tr:nth-child(even) {
@@ -235,32 +244,37 @@ table tbody tr:first-child {
   margin-block: 1rem;
 }
 
-#tbody tr.empty {
-  display: block;  
-  background: #030B0D;
+#tbody:has(tr.empty){
   overflow: hidden;
+ 
 }
 
-#tbody tr.empty td {
+#tbody:has(tr.empty) tr{
+  background: #030B0D;
+  display: grid; 
   height: 40rem;
-  width: 100%;
-  display: grid;
   place-content: center;
+
 }
 
-#tbody tr.empty td div{
+#tbody:has(tr.empty) tr td {
+ display: block;
+ width: 100%;
+}
+#tbody:has(tr.empty) tr td div {
   display: flex;
   gap: 5rem;
   align-items: center;
   justify-content: center;
   
-}
+ }
 
-#tbody tr.empty td div p {
+#tbody .empty td div p {
   font-family: 'Roboto Mono', monospace;
   color: #4E5455;
   font-size: 4rem;
 }
+
 .img-empty {
   width: 13.2rem;
   height: 12.5rem;
