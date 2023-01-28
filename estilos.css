@@ -289,13 +289,15 @@ table tbody:has(tr.empty) tr:hover{
 }
 
 
-@media (min-width: 320px) and (max-width: 768px){
+@media (min-width: 320px) and (max-width: 1024px){
 
- 
-  #app{
-    margin: auto;
-    width: 100vw;
+  #tbody:has(tr.empty) tr{
+    height: 20rem;
   }
+  #tbody:has(tr.empty) tr td div {
+    gap: 2rem;
+  }
+
   header{
     display: block;
   }
@@ -311,9 +313,9 @@ table tbody:has(tr.empty) tr:hover{
   }
   table tbody tr td:first-child{
     display: block;
-    min-width: 13rem;
+    min-width: 10rem;
   }
- td:first-child {
+  td:first-child {
     width: auto;
   }
   table tbody tr td:first-child > div p, table tbody tr td:first-child > div a, .btn-remover, table thead tr th, table tbody tr td{
@@ -330,7 +332,7 @@ table tbody:has(tr.empty) tr:hover{
   }
   
   #tbody .empty td div p{
-    font-size: 3rem;
+    font-size: 2rem;
   }
   #box-search{
     display: block;
@@ -349,10 +351,62 @@ table tbody:has(tr.empty) tr:hover{
   
 
 .img-empty {
-    width: 13.2rem;
-    height: 10.5rem;
+    width: 11.2rem;
+    height: 8.5rem;
 }
   
 
+}
+@media (min-width: 375px) and (max-width: 1024px) {
+  table tbody tr td:first-child {
+   
+    min-width: 13rem;
+}
+
+}
+@media (min-width: 425px) and (max-width: 1024px) {
+  table tbody tr td:first-child {
+   
+    min-width: 16rem;
+}
+.wrapper-search {
+  width: 34rem;
+  margin: auto;
+
+}
+
+
+}
+@media (min-width: 460px) and (max-width: 1024px) {
+  table tbody tr td:first-child {
+   
+    min-width: 17rem;
+}
+
+}
+@media (min-width: 500px) and (max-width: 1024px) {
+  table tbody tr td:first-child {
+    display: flex;
+  }
+  table tbody tr td:first-child {
+   
+    min-width: 21rem;
+}
+}
+@media (min-width: 520px) and (max-width: 1024px) {
+
+  table{
+    margin: auto;
+    width: 50rem;
+  }
+}
+@media (min-width: 620px) and (max-width: 1024px) {
+
+ :root {
+  font-size: 74%;
+ }
+ #btn-fav span {
+  display: block;
+ }
 }
 
