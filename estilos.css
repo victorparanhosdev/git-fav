@@ -28,7 +28,7 @@ body {
 
 #app {
   margin: 11.5rem auto 1rem;
-  width: min(98%, 112rem);
+  width: min(95%, 112rem);
 }
 
 header {
@@ -304,9 +304,14 @@ table tbody:has(tr.empty) tr:hover {
 
 
 @media (min-width: 320px) and (max-width: 1024px) {
-
+  #app {
+    margin-top: 6rem;
+  }
   #tbody:has(tr.empty) tr {
-    height: 20rem;
+    height: 26rem;
+  }
+  #tbody{
+    max-height: 20rem;
   }
 
   #tbody:has(tr.empty) tr td div {
@@ -315,12 +320,13 @@ table tbody:has(tr.empty) tr:hover {
 
   header {
     display: block;
+    margin-bottom: 6rem;
   }
 
   header img {
     display: block;
     width: 20rem;
-    margin: 5rem auto;
+    margin: 4rem auto;
   }
 
   table thead tr th,
@@ -345,6 +351,7 @@ table tbody:has(tr.empty) tr:hover {
   table tbody tr td {
     font-size: 1.2rem;
   }
+
 
   table tbody tr td:first-child>div a {
     margin: 1rem 0;
