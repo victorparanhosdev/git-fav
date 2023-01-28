@@ -311,7 +311,7 @@ table tbody:has(tr.empty) tr:hover {
     height: 26rem;
   }
   #tbody{
-    max-height: 20rem;
+    max-height: 26rem;
   }
 
   #tbody:has(tr.empty) tr td div {
