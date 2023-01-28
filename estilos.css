@@ -290,79 +290,69 @@ table tbody:has(tr.empty) tr:hover{
 
 
 @media (min-width: 320px) and (max-width: 768px){
-:root {
-    font-size: 27%;
+
+ 
+  #app{
+    margin: auto;
+    width: 100vw;
   }
-  header {
+  header{
     display: block;
   }
+
   header img {
     display: block;
-    width: 40rem;
-    margin: auto;
-  }
-  .wrapper-search {
-    justify-content: center;
+    width: 20rem;
     margin: 5rem auto;
-    height: 5.5rem;
   }
-  
-  #box-search{
-    width: 100vw;
-    font-size: 2rem;
+  table thead tr th,table tbody tr td{
+    padding: 1rem;
+    font-size: 1.7rem
   }
-  #btn-fav{
-    font-size: 1.7rem;
+  table tbody tr td:first-child{
+    display: block;
+    min-width: 13rem;
   }
-  #tbody .empty td div p{
-    font-size: 3.5rem;
-  }
-  thead{
-    display: table-header-group;
-  }
-  tbody {
-    display: table-row-group;
-  }
-  main{
-    max-height: 50vh;
-    overflow-y: auto;
-    overflow-x: hidden;
-  }
-  th:first-child, td:first-child{
-    width: fit-content;
-  }
-  .fav-head, #tbody{
-    border: 0;
-  }
-  table thead tr th{
+ td:first-child {
     width: auto;
   }
-  #tbody:has(tr.empty) tr {
-    width: 100vw;
+  table tbody tr td:first-child > div p, table tbody tr td:first-child > div a, .btn-remover, table thead tr th, table tbody tr td{
+    font-size: 1.2rem;
   }
+  table tbody tr td:first-child > div a{
+    margin: 1rem 0;
+  }
+  .img-user{
+    margin: 1rem 0;
+    display: block;
+    width: 4.6rem;
+    height: 4.6rem;
+  }
+  
+  #tbody .empty td div p{
+    font-size: 3rem;
+  }
+  #box-search{
+    display: block;
+
+
+  }
+  #box-search::placeholder{
+    font-size: 1rem;
+  }
+  #btn-fav{
+    padding: 1.5rem;
+  }
+  #btn-fav span{
+    display: none;
+  }
+  
+
+.img-empty {
+    width: 13.2rem;
+    height: 10.5rem;
+}
+  
+
 }
 
-@media (min-width: 320px) and (max-width: 375px){
-  :root {
-    font-size: 33%;
-  }
-}
-
-@media (min-width: 375px) and (max-width: 425px){
-  :root {
-    font-size: 37%;
-  }
-}
-
-
-@media (min-width: 425px) and (max-width: 500px){
-  :root {
-    font-size: 40%;
-  }
-}
-
-@media (min-width: 500px) and (max-width: 768px){
-  :root {
-    font-size: 58%;
-  }
-}
