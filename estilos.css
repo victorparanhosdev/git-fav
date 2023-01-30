@@ -61,9 +61,10 @@ header {
   font-weight: normal;
   font-size: 1.6rem;
   padding: 1.6rem;
-  border: none;
+  border: 2px solid transparent;
   border-radius: 0.5rem;
   width: 46.2rem;
+  outline: none;
 }
 
 #box-search::placeholder {
@@ -71,13 +72,11 @@ header {
 }
 
 #box-search:focus {
-  border-radius: 0.5rem;
-  outline: 2px solid #092d38;
+  border: 2px solid #092d38;
 }
 
 #btn-fav:focus {
-  border-radius: 0.5rem;
-  outline: 2px solid #4a808c;
+  border: 2px solid #4a808c;
 }
 
 #btn-fav {
@@ -87,7 +86,8 @@ header {
   display: flex;
   align-items: center;
   background: #065e7c;
-  border: none;
+  border: 2px solid transparent;
+  outline: none;
   border-radius: 0.5rem;
   text-transform: uppercase;
   font-weight: bold;
