@@ -266,11 +266,11 @@ table tbody tr:first-child {
 
 }
 
-table tbody:has(tr.empty) tr:hover {
+table tbody tr.empty:hover {
   filter: none;
 }
 
-#tbody:has(tr.empty) tr {
+#tbody tr.empty {
   background: #030B0D;
   display: grid;
   height: 40rem;
@@ -278,12 +278,12 @@ table tbody:has(tr.empty) tr:hover {
 
 }
 
-#tbody:has(tr.empty) tr td {
+#tbody tr.empty td {
   display: block;
   width: 100%;
 }
 
-#tbody:has(tr.empty) tr td div {
+#tbody tr.empty td div {
   display: flex;
   gap: 5rem;
   align-items: center;
@@ -291,7 +291,7 @@ table tbody:has(tr.empty) tr:hover {
 
 }
 
-#tbody .empty td div p {
+#tbody tr.empty td div p {
   font-family: 'Roboto Mono', monospace;
   color: #4E5455;
   font-size: 4rem;
@@ -313,14 +313,14 @@ table tbody:has(tr.empty) tr:hover {
   #app {
     margin-top: 6rem;
   }
-  #tbody:has(tr.empty) tr {
+  #tbody tr.empty {
     height: 26rem;
   }
   #tbody{
     max-height: 27.5rem;
   }
 
-  #tbody:has(tr.empty) tr td div {
+  #tbody tr.empty td div {
     gap: 2rem;
   }
 
@@ -370,7 +370,7 @@ table tbody:has(tr.empty) tr:hover {
     height: 4.6rem;
   }
 
-  #tbody .empty td div p {
+  #tbody tr.empty td div p {
     font-size: 2rem;
   }
 

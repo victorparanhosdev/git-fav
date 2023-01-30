@@ -4,7 +4,7 @@ export class Favorites {
     constructor(root) {
       this.app = document.querySelector(root)
       this.body = document.querySelector('main table #tbody')
-      this.dados()
+      this.load()
       this.updateRow()
       this.onAdd()
     }
@@ -15,7 +15,7 @@ export class Gitfav extends Favorites {
       super(root)
     }
   
-    dados() {
+    load() {
       this.dados = JSON.parse(localStorage.getItem('@git:')) || []
     }
     save() {
@@ -23,10 +23,30 @@ export class Gitfav extends Favorites {
     }
   
     async username(nome) {
-      const user = await GithubUser.search(nome)
-      this.dados = [user, ...this.dados]
-      this.updateRow()
-      this.save()
+      try{
+
+        const exits = this.dados.find(dados => dados.user === nome)
+
+        if(exits){
+          throw new Error('Usuário já cadastrado')
+        }
+        
+        const user = await GithubUser.search(nome)
+
+        if(user.user === undefined) {
+          throw new Error('Usuário não encontrado!')
+        }
+  
+        this.dados = [user, ...this.dados]
+        this.updateRow()
+        this.save()
+
+      } catch(error){
+        alert(error.message)
+
+      }
+
+
     }
   
     onAdd() {
@@ -34,21 +54,22 @@ export class Gitfav extends Favorites {
   
       btnFav.onclick = () => {
         const { value } = document.querySelector('#box-search')
-        this.username(value)
-        document.querySelector('#box-search').value = ''
-      }
+          this.username(value)
+          document.querySelector('#box-search').value = ''
+          document.querySelector('#box-search').focus()
+        }
+
+      
   
       window.addEventListener('keydown', event => {
         if (event.key == 'Enter') {
           const { value } = document.querySelector('#box-search')
-          if (value == '') {
-            alert('Por favor Preencha os dados')
-          } else {
             this.username(value)
             document.querySelector('#box-search').value = ''
+            document.querySelector('#box-search').focus()
           }
         }
-      })
+      )
     }
   
     createRowEmpty() {
