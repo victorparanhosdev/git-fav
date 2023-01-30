@@ -71,10 +71,12 @@ header {
 }
 
 #box-search:focus {
+  border-radius: 0.5rem;
   outline: 2px solid #092d38;
 }
 
 #btn-fav:focus {
+  border-radius: 0.5rem;
   outline: 2px solid #4a808c;
 }
 
