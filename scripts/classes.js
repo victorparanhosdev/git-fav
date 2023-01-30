@@ -23,9 +23,10 @@ export class Gitfav extends Favorites {
     }
   
     async username(nome) {
+     
       try{
 
-        const exits = this.dados.find(dados => dados.user === nome)
+        const exits = this.dados.find(dados => dados.user === nome.toLowerCase())
 
         if(exits){
           throw new Error('Usuário já cadastrado')
